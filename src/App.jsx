@@ -1,29 +1,59 @@
 import { useState } from "react"
-import reactLogo from "./assets/react.svg"
-import viteLogo from "/vite.svg"
-import "./App.scss"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Context from "./Context"
+import Home from "./pages/Home"
+import Cabinet from "./pages/Cabinet"
 
-function App() {
-  const [count, setCount] = useState(0)
+let indexDate, indexClock
+
+export default function App() {
+  const [add, setAdd] = useState([])
+
+  function addCart(item) {
+    const exists = add.some((existingItem) => existingItem.id === item.id)
+    if (!exists) {
+      setAdd((prev) => [
+        ...prev,
+        {
+          ...item,
+          date: item.date[indexDate],
+          clock: item.clock[indexClock],
+        },
+      ])
+    }
+  }
+
+  function removeCart(id) {
+    setAdd((prev) => prev.filter((item) => item.id !== id))
+  }
+
+  function handleClickDate(index) {
+    indexDate = index
+  }
+
+  function handleClickClock(index) {
+    indexClock = index
+  }
 
   return (
-    <>
-      <div>
-        <a href='https://vite.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>project REACT!!!</p>
-      </div>
-      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-    </>
+    <Context.Provider
+      value={{
+        addCart,
+        removeCart,
+        handleClickDate,
+        handleClickClock,
+        indexDate,
+        indexClock,
+        add,
+      }}
+    >
+      <Router basename='/prendre-rendez-vous-react'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<Cabinet />} />
+          {/* <Route path='*' element={<NotFound />} /> */}
+        </Routes>
+      </Router>
+    </Context.Provider>
   )
 }
-
-export default App

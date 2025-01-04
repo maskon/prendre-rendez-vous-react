@@ -1,0 +1,26 @@
+.item {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgb(207 203 203 / 20%);
+    border-radius: 10px;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    padding: 15px;
+
+    svg {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+
+    span {
+        font-size: 18px;
+        font-weight: 600;
+        color: #979797;
+    }
+}

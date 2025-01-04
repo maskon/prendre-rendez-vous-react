@@ -1,0 +1,142 @@
+.etries {
+    padding: 30px 0;
+    flex: 1 0 auto;    
+}
+
+.carts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cart {
+    flex: 0 0 49%;
+    background-color: #fff;
+    border-radius: 35px;
+    margin-bottom: 20px;
+
+    @media (max-width: 1126px) {
+        flex: 1 0 100%;
+        margin-bottom: 0px;
+    }
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+}
+
+.col {
+    img{
+        width: 240px;
+        height: 257px;
+        object-fit: cover;
+        border-radius: 35px;
+
+        @media (max-width: 500px) {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+        }
+    }
+}
+
+.inner {
+    // min-width: 335px;
+    padding: 20px;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.clock {
+    font-size: 20px;
+    font-weight: 500;
+    color: #0087CD;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.block {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    span {
+        margin-right: 10px;
+    }
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    button {
+        font-size: 16px;
+        font-weight: 500;
+        background-color: #fff;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        padding:  4px 8px;
+        transition: border .2s ease-in-out;
+
+        &:hover {
+            border: 2px solid #0087CD;
+        }
+    }
+
+    .active-date {
+        border: 2px solid #0087CD;
+    }
+
+    button:not(:last-child) {
+        margin-right: 6px;
+    }
+}
+
+.btn {
+    width: 260px;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #FF0066;
+    color: #FFFFFF;
+    border-radius: 14px;
+    padding: 10px 20px;
+    transition: opacity 0.2s ease-in-out;
+
+    .btnitem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    svg {
+        color: #b7e0ff;
+        font-size: 24px;
+        margin-right: 4px;
+    }
+    
+    &:hover {
+        opacity: 0.6;
+    }
+
+    @media (max-width: 500px) {
+        width: 100%;
+        padding: 14px 25px;
+    }
+}

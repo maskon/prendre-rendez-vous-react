@@ -1,0 +1,32 @@
+.carts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.white {
+    background: #FFFFFF;
+    border-radius: 60px;
+    padding: 10px 43px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+
+    :hover {
+        background: #e7e6e6;
+    }
+
+    @media (max-width: 500px) {
+        width: 50%;
+    }
+}
