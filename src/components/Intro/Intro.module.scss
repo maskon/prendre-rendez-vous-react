@@ -3,6 +3,10 @@
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        padding: 0 10px;
+    }
 }
 
 .intro {
@@ -32,6 +36,7 @@
 .text {
     font-weight: 600;
     font-size: 24px;
+    color: #0087CD;
 
     @media (max-width: 767px) {
         font-size: 20px;

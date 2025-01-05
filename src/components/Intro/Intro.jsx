@@ -17,7 +17,7 @@ export default function Intro() {
     <div className={classes.container}>
       <div className={classes.intro}>
         <h3 className={classes.title}>Личный кабинет</h3>
-        <span className={classes.text}>Добро пожаловать {userName ? userName : "(First Name)"} </span>
+        <span className={classes.text}>Добро пожаловать {userName ? userName : "(First Name)"}</span>
       </div>
     </div>
   )

@@ -42,7 +42,7 @@ export default function PersonaylInformation() {
       <>
         {errors[title]?.type === "required" && <p className={classes.error}>Поле не может быть пустым</p>}
 
-        {errors[title]?.type === "minLength" && <p className={classes.error}>Минимум 3 символа</p>}
+        {/* {errors[title]?.type === "minLength" && <p className={classes.error}>Минимум 3 символа</p>} */}
 
         {errors[title]?.type === "pattern" && <p className={classes.error}>{text}</p>}
 
@@ -67,7 +67,7 @@ export default function PersonaylInformation() {
                 pattern: /^[а-яА-ЯёЁa-zA-Z]+$/,
               })}
             />
-            {validation("FirstName", "Некорректно введена фамилия")}
+            {validation("FirstName", "Некорректно введена фамилия", "Минимум 3 символа")}
           </div>
           <div className={classes.item}>
             <input
@@ -78,7 +78,7 @@ export default function PersonaylInformation() {
                 pattern: /^[а-яА-ЯёЁa-zA-Z]+$/,
               })}
             />
-            {validation("LastName", "Некорректно введено имя")}
+            {validation("LastName", "Некорректно введено имя", "Минимум 3 символа")}
           </div>
           <div className={classes.item}>
             <input
@@ -140,7 +140,7 @@ export default function PersonaylInformation() {
             />
             {validation(
               "InsurancePolicyNumber",
-              "Введите корректный номер",
+              "Номер может состоять только из цифр",
               "Минимум 16 символов",
               "Максиммум 20 символов"
             )}
