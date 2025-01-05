@@ -100,7 +100,7 @@ function Form({ closeModal }) {
         <button type='submit' className={classes.red}>
           Записаться
         </button>
-        <button className={classes.white} onClick={closeModal}>
+        <button type='reset' className={classes.white} onClick={closeModal}>
           Отменить
         </button>
       </div>
