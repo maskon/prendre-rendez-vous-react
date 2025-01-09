@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect, useCallback } from "react"
 import { IoBagAdd } from "react-icons/io5"
 import classes from "./Cart.module.scss"
 import ButtonCartDate from "../ButtonCartDate/ButtonTabDate"
@@ -9,10 +9,35 @@ export default function Cart({ item }) {
   const [click, setClick] = useState(false)
   const [activeIndex, setActiveIndex] = useState(null)
   const [activeIndex2, setActiveIndex2] = useState(null)
-
-  const { addCart, handleClickDate, handleClickClock } = useContext(Context)
-
+  const { add, addCart, handleClickDate, handleClickClock } = useContext(Context)
   const disabled = activeIndex === null || activeIndex2 === null
+
+  useEffect(() => {
+    click ? setClick(true) : setClick(false)
+
+    if (add.length > 0) {
+      add.forEach((i) => {
+        if (i.title === item.title) {
+          setClick(true)
+          item.date.forEach((d, index) => {
+            if (i.date === d) {
+              setActiveIndex(index)
+            }
+          })
+          item.clock.forEach((c, index) => {
+            if (i.clock === c) {
+              setActiveIndex2(index)
+            }
+          })
+        }
+      })
+    }
+  }, [click])
+
+  const handleAddCart = useCallback(() => {
+    addCart(item)
+    setClick(true)
+  }, [item, addCart])
 
   return (
     <article key={item.id} className={classes.cart}>
@@ -65,10 +90,7 @@ export default function Cart({ item }) {
               }}
               className={classes.btn}
               disabled={disabled}
-              onClick={() => {
-                addCart(item)
-                setClick(true)
-              }}
+              onClick={handleAddCart}
             >
               <div className={classes.btnitem}>
                 <IoBagAdd />
