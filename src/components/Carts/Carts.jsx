@@ -1,8 +1,8 @@
 import Cart from "../Cart/Cart"
-import data from "../../../data"
+import data from "../../data"
 import classes from "./Carts.module.scss"
 
-export default function Carts() {
+function Carts() {
   return (
     <>
       <div className={classes.buttons}>
@@ -17,3 +17,5 @@ export default function Carts() {
     </>
   )
 }
+
+export default Carts

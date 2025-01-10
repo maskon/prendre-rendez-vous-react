@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SlSocialYoutube } from "react-icons/sl"
 import { IoBagAdd } from "react-icons/io5"
 import Nav from "../Nav/Nav"
@@ -8,6 +8,11 @@ import styles from "../Modal/Modal.module.scss"
 
 export default function Header() {
   const [modal, setModal] = useState(false)
+
+  useEffect(() => {
+    const body = document.querySelector("body")
+    modal ? body.classList.add("no-scroll") : body.classList.remove("no-scroll")
+  }, [modal])
 
   function openModal() {
     setModal(true)

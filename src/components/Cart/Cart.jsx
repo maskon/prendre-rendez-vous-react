@@ -5,7 +5,7 @@ import ButtonCartDate from "../ButtonCartDate/ButtonTabDate"
 import ButtonCartClock from "../ButtonCartClock/ButtonCartClock"
 import Context from "../../Context"
 
-export default function Cart({ item }) {
+function Cart({ item }) {
   const [click, setClick] = useState(false)
   const [activeIndex, setActiveIndex] = useState(null)
   const [activeIndex2, setActiveIndex2] = useState(null)
@@ -103,3 +103,5 @@ export default function Cart({ item }) {
     </article>
   )
 }
+
+export default Cart

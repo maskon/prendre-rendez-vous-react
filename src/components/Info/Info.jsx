@@ -4,14 +4,15 @@ import Carts from "../Carts/Carts"
 import PersonalInformation from "../PersonalInformation/PersonalInformation"
 import MyEtries from "../MyEtries/MyEtries"
 import ButtonTabs from "../ButtonTabs/ButtonTabs"
+import NumberRecords from "../NumberRecords/NumberRecords"
 
-export default function Info() {
+function Info() {
   const [tab, setTab] = useState(<Carts />)
-  const [activeButton, setActiveButton] = useState(0) // Состояние для хранения активной кнопки
+  const [activeButton, setActiveButton] = useState(0)
 
   function handleClick(componet, index) {
     setTab(componet)
-    setActiveButton(index) // Устанавливаем индекс активной кнопки
+    setActiveButton(index)
   }
 
   return (
@@ -28,6 +29,7 @@ export default function Info() {
           onClick={() => handleClick(<MyEtries />, 1)}
         >
           Мои записи
+          <NumberRecords />
         </ButtonTabs>
         <ButtonTabs
           isActive={activeButton === 2 ? `${classes.btn} ${classes.active}` : classes.btn}
@@ -40,3 +42,5 @@ export default function Info() {
     </div>
   )
 }
+
+export default Info

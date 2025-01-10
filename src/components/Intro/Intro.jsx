@@ -10,7 +10,7 @@ function showUser() {
   }
 }
 
-export default function Intro() {
+function Intro() {
   showUser()
 
   return (
@@ -22,3 +22,5 @@ export default function Intro() {
     </div>
   )
 }
+
+export default Intro

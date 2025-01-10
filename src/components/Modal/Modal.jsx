@@ -4,7 +4,7 @@ import Form from "../Form/Form"
 import classes from "./Modal.module.scss"
 import "./Alert.scss"
 
-export default function Modal({ show, closeModal, closeModalWithoutButton }) {
+function Modal({ show, closeModal, closeModalWithoutButton }) {
   const modalRef = useRef(null)
   return (
     <CSSTransition in={show} timeout={500} classNames={"alert"} unmountOnExit>
@@ -18,3 +18,5 @@ export default function Modal({ show, closeModal, closeModalWithoutButton }) {
     </CSSTransition>
   )
 }
+
+export default Modal

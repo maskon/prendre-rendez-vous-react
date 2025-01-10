@@ -3,10 +3,6 @@
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
-
-    // @media (max-width: 768px) {
-    //     padding: 0 10px;
-    // }
 }
 
 .modal {
@@ -16,6 +12,7 @@
     height: 100vh;
     width: 100%;
     background: rgba(244, 244, 244, 0.8);
+    overflow-y: auto;
 }
 .item {
     max-width: 500px;

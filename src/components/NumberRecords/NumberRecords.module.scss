@@ -1,0 +1,17 @@
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 25px;
+    min-height: 25px;
+    background-color: #FF0066;
+    border-radius: 50%;
+    opacity: 0.7;
+    margin: -25px 0 0 -3px;
+}
+
+.item {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+}

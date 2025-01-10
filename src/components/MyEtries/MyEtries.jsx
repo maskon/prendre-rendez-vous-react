@@ -3,8 +3,8 @@ import { MdAutoDelete } from "react-icons/md"
 import classes from "./MyEtries.module.scss"
 import Context from "../../Context"
 
-export default function MyEtries() {
-  const { add, indexDate, indexClock, removeCart } = useContext(Context)
+function MyEtries() {
+  const { add, removeCart } = useContext(Context)
   return (
     <div className={classes.etries}>
       <section className={classes.carts}>
@@ -42,9 +42,11 @@ export default function MyEtries() {
             )
           })
         ) : (
-          <p className={classes.title}>Нет ни одной записи!</p>
+          <p className={classes.clock}>Нет ни одной записи!</p>
         )}
       </section>
     </div>
   )
 }
+
+export default MyEtries
